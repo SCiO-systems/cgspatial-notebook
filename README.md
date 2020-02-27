@@ -6,7 +6,7 @@ The `cgspatial-notebook` includes frequently used spatial libraries along with l
 
 The `cgspatial-notebook` contains Python, R, and Julia and is built on top of the datascience-notebook. The li
 
-[`cgspatiale-notebook`](https://jupyter-docker-stacks.readthedocs.io/en/latest/using/selecting.html#jupyter-datascience-notebook) image.
+[`cgspatial-notebook`](https://jupyter-docker-stacks.readthedocs.io/en/latest/using/selecting.html#jupyter-datascience-notebook) image.
 
 
 
