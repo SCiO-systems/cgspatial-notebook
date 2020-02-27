@@ -11,7 +11,6 @@ Click on the following badge to launch a notebook on the `https://mybinder.org` 
 
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/SCiO-systems/cgspatial-notebook/master)
 
-# Appendix
 ## R Libraries
 
 * [analogues](https://github.com/CIAT-DAPA/analogues "analogues")
