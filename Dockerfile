@@ -1,14 +1,11 @@
+#cgspatial-notebook
 ARG BASE_CONTAINER=jupyter/datascience-notebook:notebook-6.0.3
 FROM $BASE_CONTAINER
-
-
 
 USER $NB_UID
 
 RUN pip install --upgrade jupyterlab-git
 RUN jupyter lab build
-
-
 
 
 RUN conda install --yes r-raster
