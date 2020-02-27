@@ -1,5 +1,7 @@
 [![Build Status](https://travis-ci.org/SCiO-systems/cgspatial-notebook.svg?branch=master)](https://travis-ci.org/SCiO-systems/cgspatial-notebook)
 
+[![License: CC0-1.0](https://img.shields.io/badge/License-CC0%201.0-lightgrey.svg)](http://creativecommons.org/publicdomain/zero/1.0/)
+
 # cgspatial-notebook
 `cgspatial-notebook` is a community Jupyter Docker Stack image. The image includes major geospatial Python &amp; R libraries  on top of the datascience-notebook image. It also contains libraries that allow operations ove climatic data.
 
