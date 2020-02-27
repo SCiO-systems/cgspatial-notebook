@@ -14,4 +14,4 @@ used data science libraries for spatial analysis.
 
 Click on the following badge to launch a notebook on the `https://mybinder.org` service.
 
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/umsi-mads/education-notebook/master)
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/cgspatial-notebook/master)
