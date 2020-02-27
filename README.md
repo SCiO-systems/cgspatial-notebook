@@ -2,13 +2,14 @@
 cgspatial-notebook is a community Jupyter Docker Stack image. The image includes major geospatial Python &amp; R libraries  on top of the datascience-notebook image. 
 
 ## What is cgspatial-notebook
-
+The `cgspatial-notebook` includes frequently used spatial libraries along with libraries that offer functions over climatic data. 
 The `cgspatial-notebook` (Add description)
 Jupyter docker stacks' 
 [`cgspatiale-notebook`](https://jupyter-docker-stacks.readthedocs.io/en/latest/using/selecting.html#jupyter-datascience-notebook) image.
 
-The `cgspatial-notebook` contains Python, R, and Julia as well as frequently
-used data science libraries for spatial analysis.
+The `cgspatial-notebook` contains Python, R, and Julia and is built on top of the datascience-notebook.
+
+
 
 ## Try it on Binder
 
