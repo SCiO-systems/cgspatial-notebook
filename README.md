@@ -25,7 +25,7 @@ docker pull scioquiver/notebooks:cgspatial-notebook
 
 ## R Libraries
 
-* [analogues]
+* [analogues](https://github.com/CIAT-DAPA/analogues "analogues")
 * [devtools](https://CRAN.R-project.org/package=devtools "devtools")
 * [dismo](https://cran.r-project.org/package=dismo "dismo")
 * [dplyr](https://cran.r-project.org/package=dplyr "dplyr")
