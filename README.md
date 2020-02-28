@@ -45,6 +45,15 @@ docker pull scioquiver/notebooks:cgspatial-notebook
 * [sp](https://cran.r-project.org/package=sp "sp")
 * [spatstat](https://cran.r-project.org/package=spatstat "spatstat")
 * [tidyr](https://cran.r-project.org/package=tidyr "tidyr")
+
+## Python Libraries
+
+* [Shapely](https://pypi.org/project/Shapely/"Shapely")
+* [geopandas](https://pypi.org/project/geopandas/"geopandas")
+* [rasterio](https://pypi.org/project/rasterio/"rasterio")
+* [PCSE](https://pypi.org/project/PCSE/"PCSE")
+* [GDAL](https://pypi.org/project/GDAL/ "GDAL")
+
 # References
 
 ## Jupyter Docker Stacks - Community Stack version
