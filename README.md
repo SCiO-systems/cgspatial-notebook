@@ -14,7 +14,7 @@ Click on the following badge to launch a notebook on the `https://mybinder.org` 
 
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/SCiO-systems/cgspatial-notebook/master)
 
-# Docker Hub
+## Docker Hub
 * Docker Hub [hub.docker.com/r/scioquiver/notebooks](https://hub.docker.com/r/scioquiver/notebooks)
 
 Docker Pull Command for Docker image.
