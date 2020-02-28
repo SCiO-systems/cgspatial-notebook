@@ -1,6 +1,4 @@
 [![Build Status](https://travis-ci.org/SCiO-systems/cgspatial-notebook.svg?branch=master)](https://travis-ci.org/SCiO-systems/cgspatial-notebook) [![License: CC0-1.0](https://img.shields.io/badge/License-CC0%201.0-lightgrey.svg)](http://creativecommons.org/publicdomain/zero/1.0/)
-
-
 [![CGIAR:CSI-CoP](https://img.shields.io/badge/CGIAR-CSI--CoP-brightgreen)](https://bigdata.cgiar.org/communities-of-practice/geospatial-data/)
 [![maintainer:SCiO](https://img.shields.io/badge/maintainer-SCiO-blue)](https://scio.systems)
 
