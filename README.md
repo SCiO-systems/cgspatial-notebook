@@ -4,7 +4,7 @@
 
 
 # cgspatial-notebook
-`cgspatial-notebook` is a community Jupyter Docker Stack image. The image includes major geospatial Python &amp; R libraries  on top of the datascience-notebook image. It also contains libraries that allow operations ove climatic data.
+`cgspatial-notebook` is a community Jupyter Docker Stack image. The image includes major geospatial Python &amp; R libraries  on top of the datascience-notebook image. It also contains libraries that allow operations over climatic data.
 
 
 
@@ -14,9 +14,18 @@ Click on the following badge to launch a notebook on the `https://mybinder.org` 
 
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/SCiO-systems/cgspatial-notebook/master)
 
+# Docker Hub
+* Docker Hub [hub.docker.com/r/scioquiver/notebooks](https://hub.docker.com/r/scioquiver/notebooks)
+
+Docker Pull Command for Docker image.
+```
+docker pull scioquiver/notebooks:cgspatial-notebook
+```
+
+
 ## R Libraries
 
-* [analogues](https://github.com/CIAT-DAPA/analogues "analogues")
+* [analogues]
 * [devtools](https://CRAN.R-project.org/package=devtools "devtools")
 * [dismo](https://cran.r-project.org/package=dismo "dismo")
 * [dplyr](https://cran.r-project.org/package=dplyr "dplyr")
@@ -36,3 +45,7 @@ Click on the following badge to launch a notebook on the `https://mybinder.org` 
 * [sp](https://cran.r-project.org/package=sp "sp")
 * [spatstat](https://cran.r-project.org/package=spatstat "spatstat")
 * [tidyr](https://cran.r-project.org/package=tidyr "tidyr")
+# References
+
+## Jupyter Docker Stacks - Community Stack version
+This project is developed with the helpful guide of [Jupyter Docker Stacks](https://jupyter-docker-stacks.readthedocs.io/en/latest/). The base container is **jupyter/datascience-notebook** and this **Community Stack** is setup [via the guide.](https://jupyter-docker-stacks.readthedocs.io/en/latest/contributing/stacks.html)
