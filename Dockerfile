@@ -3,21 +3,6 @@ FROM $BASE_CONTAINER
 
 USER $NB_UID
 
-RUN pip install --upgrade jupyterlab-git
-
-RUN jupyter labextension install jupyterlab-drawio
-RUN jupyter labextension install @jupyterlab/fasta-extension
-RUN jupyter labextension install @jupyterlab/geojson-extension
-RUN jupyter labextension install @jupyterlab/katex-extension
-RUN jupyter labextension install @jupyterlab/mathjax3-extension
-RUN jupyter labextension install @jupyterlab/vega2-extension
-RUN jupyter labextension install @jupyterlab/vega3-extension
-RUN jupyter labextension install jupyterlab-spreadsheet
-RUN jupyter labextension install @jupyterlab/toc
-RUN pip install jupyter-archive
-
-RUN jupyter lab build
-
 RUN R -e "install.packages('raster',dependencies=TRUE, repos='http://cran.rstudio.com/')"
 RUN R -e "install.packages('sp',dependencies=TRUE, repos='http://cran.rstudio.com/')"
 RUN R -e "install.packages('devtools',dependencies=TRUE, repos='http://cran.rstudio.com/')"
