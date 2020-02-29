@@ -1,37 +1,48 @@
-#cgspatial-notebook
 ARG BASE_CONTAINER=jupyter/datascience-notebook:notebook-6.0.3
 FROM $BASE_CONTAINER
 
 USER $NB_UID
 
-RUN conda install --yes r-raster
-RUN conda install --yes r-sp
-RUN conda install --yes r-devtools
-RUN conda install --yes r-maptools
-RUN conda install --yes r-rgdal
-RUN conda install --yes r-rgeos
-RUN conda install --yes r-dplyr
-RUN conda install --yes r-tidyr
-RUN conda install --yes r-stringr
-RUN conda install --yes r-readxl
-RUN conda install --yes r-openxlsx
-RUN conda install --yes r-rasterVis
-RUN conda install --yes r-spatstat
-RUN conda install --yes r-latticeExtra
-RUN conda install --yes r-deldir
-RUN conda install --yes r-dismo
-RUN conda install --yes r-fields
-RUN conda install --yes r-geosphere
-RUN conda install --yes r-gstat
-RUN conda install --yes r-jsonlite
-RUN conda install --yes r-RandomFields
-RUN conda install --yes r-randomForest
-RUN conda install --yes r-rpart
-RUN conda install --yes r-sf
-RUN conda install --yes r-spdep
-RUN conda install --yes r-XML
-RUN conda install --yes r-spData
+RUN pip install --upgrade jupyterlab-git
 
+RUN jupyter labextension install jupyterlab-drawio
+RUN jupyter labextension install @jupyterlab/fasta-extension
+RUN jupyter labextension install @jupyterlab/geojson-extension
+RUN jupyter labextension install @jupyterlab/katex-extension
+RUN jupyter labextension install @jupyterlab/mathjax3-extension
+RUN jupyter labextension install @jupyterlab/vega2-extension
+RUN jupyter labextension install @jupyterlab/vega3-extension
+RUN jupyter labextension install jupyterlab-spreadsheet
+RUN jupyter labextension install @jupyterlab/toc
+RUN pip install jupyter-archive
+
+RUN jupyter lab build
+
+RUN R -e "install.packages('raster',dependencies=TRUE, repos='http://cran.rstudio.com/')"
+RUN R -e "install.packages('sp',dependencies=TRUE, repos='http://cran.rstudio.com/')"
+RUN R -e "install.packages('devtools',dependencies=TRUE, repos='http://cran.rstudio.com/')"
+RUN R -e "install.packages('maptools',dependencies=TRUE, repos='http://cran.rstudio.com/')"
+RUN R -e "install.packages('rgdal',dependencies=TRUE, repos='http://cran.rstudio.com/')"
+RUN R -e "install.packages('rgeos',dependencies=TRUE, repos='http://cran.rstudio.com/')"
+RUN R -e "install.packages('dplyr',dependencies=TRUE, repos='http://cran.rstudio.com/')"
+RUN R -e "install.packages('tidyr',dependencies=TRUE, repos='http://cran.rstudio.com/')"
+RUN R -e "install.packages('stringr',dependencies=TRUE, repos='http://cran.rstudio.com/')"
+RUN R -e "install.packages('readxl',dependencies=TRUE, repos='http://cran.rstudio.com/')"
+RUN R -e "install.packages('openxlsx',dependencies=TRUE, repos='http://cran.rstudio.com/')"
+RUN R -e "install.packages('rasterVis',dependencies=TRUE, repos='http://cran.rstudio.com/')"
+RUN R -e "install.packages('spatstat',dependencies=TRUE, repos='http://cran.rstudio.com/')"
+RUN R -e "install.packages('latticeExtra',dependencies=TRUE, repos='http://cran.rstudio.com/')"
+RUN R -e "install.packages('deldir',dependencies=TRUE, repos='http://cran.rstudio.com/')"
+RUN R -e "install.packages('dismo',dependencies=TRUE, repos='http://cran.rstudio.com/')"
+RUN R -e "install.packages('fields',dependencies=TRUE, repos='http://cran.rstudio.com/')"
+RUN R -e "install.packages('geosphere',dependencies=TRUE, repos='http://cran.rstudio.com/')"
+RUN R -e "install.packages('RandomFields',dependencies=TRUE, repos='http://cran.rstudio.com/')"
+RUN R -e "install.packages('randomForest',dependencies=TRUE, repos='http://cran.rstudio.com/')"
+RUN R -e "install.packages('rpart',dependencies=TRUE, repos='http://cran.rstudio.com/')"
+RUN R -e "install.packages('sf',dependencies=TRUE, repos='http://cran.rstudio.com/')"
+RUN R -e "install.packages('spdep',dependencies=TRUE, repos='http://cran.rstudio.com/')"
+RUN R -e "install.packages('XML',dependencies=TRUE, repos='http://cran.rstudio.com/')"
+RUN R -e "install.packages('spData',dependencies=TRUE, repos='http://cran.rstudio.com/')"
 RUN R -e "install.packages('spgwr',dependencies=TRUE, repos='http://cran.rstudio.com/')"
 RUN R -e "install.packages('kernlab',dependencies=TRUE, repos='http://cran.rstudio.com/')"
 RUN R -e "install.packages('Rwofost',dependencies=TRUE, repos='http://R-Forge.R-project.org')"
@@ -56,9 +67,22 @@ RUN apt-get install gdal-bin -y
 RUN apt-get install libgdal-dev -y
 RUN export CPLUS_INCLUDE_PATH=/usr/include/gdal
 RUN export C_INCLUDE_PATH=/usr/include/gdal
-
 ADD libraries.R libraries.R
 RUN Rscript libraries.R
 
 USER $NB_UID
-RUN pip install GDAL==3.0.0
+
+RUN pip install GDAL==$(gdal-config --version | awk -F'[.]' '{print $1"."$2}')
+RUN pip install jupyterhub==1.0.0
+
+USER root
+
+RUN apt-get install libproj-dev libgdal-dev -y
+RUN apt-get install gdal-bin proj-bin libgdal-dev libproj-dev -y
+
+RUN  conda install --quiet --yes 'r-rgdal'
+RUN  conda install --quiet --yes 'r-rgeos'
+RUN  conda install --quiet --yes 'r-geojsonio'
+RUN  conda install --quiet --yes 'r-spdep'
+
+USER $NB_UID
