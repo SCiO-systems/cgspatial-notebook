@@ -7,8 +7,6 @@ RUN R -e "install.packages('raster',dependencies=TRUE, repos='http://cran.rstudi
 RUN R -e "install.packages('sp',dependencies=TRUE, repos='http://cran.rstudio.com/')"
 RUN R -e "install.packages('devtools',dependencies=TRUE, repos='http://cran.rstudio.com/')"
 RUN R -e "install.packages('maptools',dependencies=TRUE, repos='http://cran.rstudio.com/')"
-RUN R -e "install.packages('rgdal',dependencies=TRUE, repos='http://cran.rstudio.com/')"
-RUN R -e "install.packages('rgeos',dependencies=TRUE, repos='http://cran.rstudio.com/')"
 RUN R -e "install.packages('dplyr',dependencies=TRUE, repos='http://cran.rstudio.com/')"
 RUN R -e "install.packages('tidyr',dependencies=TRUE, repos='http://cran.rstudio.com/')"
 RUN R -e "install.packages('stringr',dependencies=TRUE, repos='http://cran.rstudio.com/')"
@@ -28,14 +26,11 @@ RUN R -e "install.packages('sf',dependencies=TRUE, repos='http://cran.rstudio.co
 RUN R -e "install.packages('spdep',dependencies=TRUE, repos='http://cran.rstudio.com/')"
 RUN R -e "install.packages('XML',dependencies=TRUE, repos='http://cran.rstudio.com/')"
 RUN R -e "install.packages('spData',dependencies=TRUE, repos='http://cran.rstudio.com/')"
-RUN R -e "install.packages('spgwr',dependencies=TRUE, repos='http://cran.rstudio.com/')"
 RUN R -e "install.packages('kernlab',dependencies=TRUE, repos='http://cran.rstudio.com/')"
 RUN R -e "install.packages('Rwofost',dependencies=TRUE, repos='http://R-Forge.R-project.org')"
 RUN R -e "install.packages('RStoolbox',dependencies=TRUE, repos='http://cran.rstudio.com/')"
-RUN R -e "install.packages('landsat',dependencies=TRUE, repos='http://cran.rstudio.com/')"
 RUN R -e "install.packages('hsdar',dependencies=TRUE, repos='http://cran.rstudio.com/')"
 RUN R -e "install.packages('spDataLarge',repos='https://nowosad.github.io/drat/', type='source')"
-RUN R -e "install.packages('RColorBrewer',repos='https://nowosad.github.io/drat/', type='source')"
 
 RUN pip install shapely
 RUN pip install geopandas
@@ -54,20 +49,25 @@ RUN export CPLUS_INCLUDE_PATH=/usr/include/gdal
 RUN export C_INCLUDE_PATH=/usr/include/gdal
 ADD libraries.R libraries.R
 RUN Rscript libraries.R
+RUN apt-get install libproj-dev libgdal-dev -y
+RUN apt-get install gdal-bin proj-bin libgdal-dev libproj-dev -y
+RUN conda install --quiet --yes 'r-rgdal'
+RUN conda install --quiet --yes 'r-rgeos'
+RUN conda install --quiet --yes 'r-geojsonio'
+RUN conda install --quiet --yes 'r-spdep'
+RUN conda install --quiet --yes 'r-rcolorbrewer'
+RUN conda install --quiet --yes 'r-ncdf4'
+
+
 
 USER $NB_UID
+RUN R -e "install.packages('hsdar',dependencies=TRUE, repos='http://cran.rstudio.com/')"
+RUN R -e "install.packages('landsat',dependencies=TRUE, repos='http://cran.rstudio.com/')"
+RUN R -e "install.packages('spgwr',dependencies=TRUE, repos='http://cran.rstudio.com/')"
+RUN R -e "install.packages('rpart',dependencies=TRUE, repos='http://cran.rstudio.com/')"
+RUN R -e "install.packages('RStoolbox',dependencies=TRUE, repos='http://cran.rstudio.com/')"
+
 
 RUN pip install GDAL==$(gdal-config --version | awk -F'[.]' '{print $1"."$2}')
 RUN pip install jupyterhub==1.0.0
 
-USER root
-
-RUN apt-get install libproj-dev libgdal-dev -y
-RUN apt-get install gdal-bin proj-bin libgdal-dev libproj-dev -y
-
-RUN  conda install --quiet --yes 'r-rgdal'
-RUN  conda install --quiet --yes 'r-rgeos'
-RUN  conda install --quiet --yes 'r-geojsonio'
-RUN  conda install --quiet --yes 'r-spdep'
-
-USER $NB_UID
