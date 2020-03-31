@@ -57,6 +57,7 @@ RUN conda install --quiet --yes 'r-geojsonio'
 RUN conda install --quiet --yes 'r-spdep'
 RUN conda install --quiet --yes 'r-rcolorbrewer'
 RUN conda install --quiet --yes 'r-ncdf4'
+RUN conda install -c conda-forge r-velox
 
 
 
