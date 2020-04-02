@@ -71,4 +71,5 @@ RUN R -e "install.packages('RStoolbox',dependencies=TRUE, repos='http://cran.rst
 
 RUN pip install GDAL==$(gdal-config --version | awk -F'[.]' '{print $1"."$2}')
 RUN pip install jupyterhub==1.0.0
+ADD maxent.jar /opt/conda/lib/R/library/dismo/java/maxent.jar
 
