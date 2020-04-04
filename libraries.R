@@ -48,6 +48,7 @@ install.packages("ggspatial", repos='http://cran.rstudio.com/')
 install.packages("doMC", repos='http://cran.rstudio.com/')
 install.packages("caretEnsemble", repos='http://cran.rstudio.com/')
 install.packages("proj4", repos='http://cran.rstudio.com/')
+install.packages("RMAWGEN", repos='http://cran.rstudio.com/')
 
 
 
