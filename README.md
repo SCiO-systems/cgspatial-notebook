@@ -90,6 +90,7 @@ docker pull scioquiver/notebooks:cgspatial-notebook
 * [doMC](https://cran.r-project.org/package=doMC "doMC")
 * [caretEnsemble](https://cran.r-project.org/package=caretEnsemble "caretEnsemble")
 * [proj4](https://cran.r-project.org/package=proj4 "proj4")
+* [RMAWGEN](https://cran.r-project.org/package=RMAWGEN "RMAWGEN")
 
 ## Python Libraries
 
