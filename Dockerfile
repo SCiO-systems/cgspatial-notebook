@@ -40,6 +40,7 @@ RUN pip install pcse
 USER root
 
 RUN apt-get update
+RUN apt-get apt-get install unrar
 RUN apt-get install software-properties-common -y
 RUN add-apt-repository ppa:ubuntugis/ppa && sudo apt-get update
 RUN apt-get update
