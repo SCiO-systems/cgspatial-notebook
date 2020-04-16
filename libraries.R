@@ -1,5 +1,6 @@
 library(devtools)
 install_github("CIAT-DAPA/analogues")
+install_github("palderman/dssatR")
 install_github("agrobioinfoservices/climatrends", build_vignettes = TRUE)
 install_github("agrobioinfoservices/gosset", build_vignettes = TRUE)
 install_github("agrobioinfoservices/gdistance")
