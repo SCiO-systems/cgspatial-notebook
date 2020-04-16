@@ -48,8 +48,6 @@ RUN apt-get install gdal-bin -y
 RUN apt-get install libgdal-dev -y
 RUN export CPLUS_INCLUDE_PATH=/usr/include/gdal
 RUN export C_INCLUDE_PATH=/usr/include/gdal
-ADD libraries.R libraries.R
-RUN Rscript libraries.R
 RUN apt-get install libproj-dev libgdal-dev -y
 RUN apt-get install gdal-bin proj-bin libgdal-dev libproj-dev -y
 RUN conda install --quiet --yes 'r-rgdal'
@@ -59,7 +57,10 @@ RUN conda install --quiet --yes 'r-spdep'
 RUN conda install --quiet --yes 'r-rcolorbrewer'
 RUN conda install --quiet --yes 'r-ncdf4'
 RUN conda install -c conda-forge r-velox
-
+RUN apt-get remove pkg-config -y
+ENV PROJ_LIB="/opt/conda/share/proj"
+ADD libraries.R libraries.R
+RUN Rscript libraries.R
 
 
 USER $NB_UID
