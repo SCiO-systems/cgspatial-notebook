@@ -60,6 +60,7 @@ RUN conda install -c conda-forge r-velox
 RUN conda install -c conda-forge r-rjava
 RUN apt-get remove pkg-config -y
 ENV PROJ_LIB="/opt/conda/share/proj"
+RUN conda install openjdk=8.0.192=h14c3975_1003
 ADD libraries.R libraries.R
 RUN Rscript libraries.R
 
