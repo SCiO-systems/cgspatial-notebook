@@ -50,11 +50,12 @@ install.packages("doMC", repos='http://cran.rstudio.com/')
 install.packages("caretEnsemble", repos='http://cran.rstudio.com/')
 install.packages("proj4", repos='http://cran.rstudio.com/')
 install.packages("RMAWGEN", repos='http://cran.rstudio.com/')
-install.packages("terra", repos='http://cran.rstudio.com/')
 install.packages("meteor", repos='http://cran.rstudio.com/')
 install.packages("Hmisc", repos='http://cran.rstudio.com/')
 library(devtools)
-install_github("cropmodels/ecocrop")
+install_github("rspatial/terra")
+install_github("cropmodels/Recocrop")
+
 
 
 
