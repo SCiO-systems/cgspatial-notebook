@@ -1,79 +1,43 @@
 ARG BASE_CONTAINER=jupyter/datascience-notebook:notebook-6.0.3
 FROM $BASE_CONTAINER
 
-USER $NB_UID
-
-RUN R -e "install.packages('raster',dependencies=TRUE, repos='http://cran.rstudio.com/')"
-RUN R -e "install.packages('sp',dependencies=TRUE, repos='http://cran.rstudio.com/')"
-RUN R -e "install.packages('devtools',dependencies=TRUE, repos='http://cran.rstudio.com/')"
-RUN R -e "install.packages('maptools',dependencies=TRUE, repos='http://cran.rstudio.com/')"
-RUN R -e "install.packages('dplyr',dependencies=TRUE, repos='http://cran.rstudio.com/')"
-RUN R -e "install.packages('tidyr',dependencies=TRUE, repos='http://cran.rstudio.com/')"
-RUN R -e "install.packages('stringr',dependencies=TRUE, repos='http://cran.rstudio.com/')"
-RUN R -e "install.packages('readxl',dependencies=TRUE, repos='http://cran.rstudio.com/')"
-RUN R -e "install.packages('openxlsx',dependencies=TRUE, repos='http://cran.rstudio.com/')"
-RUN R -e "install.packages('rasterVis',dependencies=TRUE, repos='http://cran.rstudio.com/')"
-RUN R -e "install.packages('spatstat',dependencies=TRUE, repos='http://cran.rstudio.com/')"
-RUN R -e "install.packages('latticeExtra',dependencies=TRUE, repos='http://cran.rstudio.com/')"
-RUN R -e "install.packages('deldir',dependencies=TRUE, repos='http://cran.rstudio.com/')"
-RUN R -e "install.packages('dismo',dependencies=TRUE, repos='http://cran.rstudio.com/')"
-RUN R -e "install.packages('fields',dependencies=TRUE, repos='http://cran.rstudio.com/')"
-RUN R -e "install.packages('geosphere',dependencies=TRUE, repos='http://cran.rstudio.com/')"
-RUN R -e "install.packages('RandomFields',dependencies=TRUE, repos='http://cran.rstudio.com/')"
-RUN R -e "install.packages('randomForest',dependencies=TRUE, repos='http://cran.rstudio.com/')"
-RUN R -e "install.packages('rpart',dependencies=TRUE, repos='http://cran.rstudio.com/')"
-RUN R -e "install.packages('sf',dependencies=TRUE, repos='http://cran.rstudio.com/')"
-RUN R -e "install.packages('spdep',dependencies=TRUE, repos='http://cran.rstudio.com/')"
-RUN R -e "install.packages('XML',dependencies=TRUE, repos='http://cran.rstudio.com/')"
-RUN R -e "install.packages('spData',dependencies=TRUE, repos='http://cran.rstudio.com/')"
-RUN R -e "install.packages('kernlab',dependencies=TRUE, repos='http://cran.rstudio.com/')"
-RUN R -e "install.packages('Rwofost',dependencies=TRUE, repos='http://R-Forge.R-project.org')"
-RUN R -e "install.packages('RStoolbox',dependencies=TRUE, repos='http://cran.rstudio.com/')"
-RUN R -e "install.packages('hsdar',dependencies=TRUE, repos='http://cran.rstudio.com/')"
-RUN R -e "install.packages('spDataLarge',repos='https://nowosad.github.io/drat/', type='source')"
-
-RUN pip install shapely
-RUN pip install geopandas
-RUN pip install rasterio
-RUN pip install pcse
-
 USER root
 
-RUN apt-get update
-RUN apt-get apt-get install unrar
-RUN apt-get install software-properties-common -y
-RUN add-apt-repository ppa:ubuntugis/ppa && sudo apt-get update
-RUN apt-get update
-RUN apt-get install gdal-bin -y
-RUN apt-get install libgdal-dev -y
-RUN export CPLUS_INCLUDE_PATH=/usr/include/gdal
-RUN export C_INCLUDE_PATH=/usr/include/gdal
-RUN apt-get install libproj-dev libgdal-dev -y
-RUN apt-get install gdal-bin proj-bin libgdal-dev libproj-dev -y
-RUN conda install --quiet --yes 'r-rgdal'
-RUN conda install --quiet --yes 'r-rgeos'
-RUN conda install --quiet --yes 'r-geojsonio'
-RUN conda install --quiet --yes 'r-spdep'
-RUN conda install --quiet --yes 'r-rcolorbrewer'
-RUN conda install --quiet --yes 'r-ncdf4'
-RUN conda install -c conda-forge r-velox
-RUN conda install -c conda-forge r-rjava
+RUN pip install shapely  && \
+    pip install geopandas  && \
+    pip install rasterio  && \
+    pip install pcse
+
+RUN apt-get update && apt-get install software-properties-common -y
+RUN add-apt-repository ppa:ubuntugis/ppa && apt-get update
+RUN apt-get install gdal-bin -y && apt-get install libgdal-dev -y
+RUN export CPLUS_INCLUDE_PATH=/usr/include/gdal && export C_INCLUDE_PATH=/usr/include/gdal
+
+RUN pip install GDAL==$(gdal-config --version | awk -F'[.]' '{print $1"."$2}') && \
+    pip install jupyterhub==1.0.0
+
+RUN apt-get install unrar -y && \
+    apt-get install libproj-dev -y && \
+    apt-get install libgdal-dev -y && \
+        apt-get install gdal-bin -y && \
+        apt-get install proj-bin -y
+
+RUN conda install -c conda-forge r-velox && \
+    conda install -c conda-forge r-rjava
+
 RUN apt-get remove pkg-config -y
+
 ENV PROJ_LIB="/opt/conda/share/proj"
-RUN conda install openjdk=8.0.192=h14c3975_1003
+
+RUN  conda install openjdk=8.0.192=h14c3975_1003 && \
+     conda install --quiet --yes 'r-rgdal' && \
+     conda install --quiet --yes 'r-rgeos' && \
+     conda install --quiet --yes 'r-geojsonio' && \
+     conda install --quiet --yes 'r-spdep' && \
+     conda install --quiet --yes 'r-rcolorbrewer' && \
+     conda install --quiet --yes 'r-ncdf4'
+
 ADD libraries.R libraries.R
 RUN Rscript libraries.R
 
-
-USER $NB_UID
-RUN R -e "install.packages('hsdar',dependencies=TRUE, repos='http://cran.rstudio.com/')"
-RUN R -e "install.packages('landsat',dependencies=TRUE, repos='http://cran.rstudio.com/')"
-RUN R -e "install.packages('spgwr',dependencies=TRUE, repos='http://cran.rstudio.com/')"
-RUN R -e "install.packages('rpart',dependencies=TRUE, repos='http://cran.rstudio.com/')"
-RUN R -e "install.packages('RStoolbox',dependencies=TRUE, repos='http://cran.rstudio.com/')"
-
-
-RUN pip install GDAL==$(gdal-config --version | awk -F'[.]' '{print $1"."$2}')
-RUN pip install jupyterhub==1.0.0
 ADD extra/maxent.jar /opt/conda/lib/R/library/dismo/java/maxent.jar
-
