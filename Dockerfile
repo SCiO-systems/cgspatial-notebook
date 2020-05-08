@@ -3,6 +3,7 @@ FROM $BASE_CONTAINER
 
 USER root
 
+
 RUN pip install shapely  && \
     pip install geopandas  && \
     pip install rasterio  && \
@@ -17,6 +18,7 @@ RUN pip install GDAL==$(gdal-config --version | awk -F'[.]' '{print $1"."$2}') &
     pip install jupyterhub==1.0.0
 
 RUN apt-get install unrar -y && \
+    apt-get install lftp -y && \
     apt-get install libproj-dev -y && \
     apt-get install libgdal-dev -y && \
         apt-get install gdal-bin -y && \
