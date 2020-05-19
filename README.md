@@ -94,6 +94,10 @@ docker pull scioquiver/notebooks:cgspatial-notebook
 * [RMAWGEN](https://cran.r-project.org/package=RMAWGEN "RMAWGEN")
 * [mclust](https://cran.r-project.org/package=mclust "mclust")
 * [fpc](https://cran.r-project.org/package=fpc "fpc")
+* [Rquefts](https://cran.r-project.org/package=Rquefts "Rquefts")
+* [reshape](https://cran.r-project.org/package=reshape "reshape")
+* [genesysr](https://gitlab.croptrust.org/genesys-pgr/genesysr "genesysr")
+* [rgbif](https://github.com/ropensci/rgbifc "rgbif")
 
 ## Python Libraries
 
