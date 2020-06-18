@@ -25,7 +25,9 @@ docker pull scioquiver/notebooks:cgspatial-notebook
 
 
 ## R Libraries
-
+* [DSSAT](https://cran.r-project.org/package=dismo "DSSAT")
+* [Dasst](https://cran.r-project.org/package=dismo "Dasst")
+* [anytime](https://cran.r-project.org/package=dismo "anytime")
 * [analogues](https://github.com/CIAT-DAPA/analogues "analogues")
 * [dssatR](https://github.com/palderman/dssatR/ "dssatR")
 * [devtools](https://CRAN.R-project.org/package=devtools "devtools")
