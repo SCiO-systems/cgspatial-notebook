@@ -1,3 +1,4 @@
+library(devtools)
 install.packages("spDataLarge",dependencies=TRUE,repos='https://nowosad.github.io/drat/', type='source')
 install.packages("RColorBrewer",dependencies=TRUE,repos='https://nowosad.github.io/drat/', type='source')
 install.packages("raster",dependencies=TRUE, repos='http://cran.rstudio.com/')
