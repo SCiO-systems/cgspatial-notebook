@@ -1,8 +1,8 @@
 .PHONY: help build dev test test-env
 
 # Docker image name and tag
-IMAGE:=scioquiver/elasticsearch
-TAG?=gadm_polygons
+IMAGE:=scioquiver/notebooks
+TAG?=cgspatial-notebook
 # Shell that make should use
 SHELL:=bash
 
