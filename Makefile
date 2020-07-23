@@ -2,7 +2,7 @@
 
 # Docker image name and tag
 IMAGE:=scioquiver/notebooks
-TAG?=latest
+TAG?=cgspatial-notebook
 # Shell that make should use
 SHELL:=bash
 
