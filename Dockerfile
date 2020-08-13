@@ -15,6 +15,7 @@ RUN apt-get install gdal-bin -y && apt-get install libgdal-dev -y
 RUN export CPLUS_INCLUDE_PATH=/usr/include/gdal && export C_INCLUDE_PATH=/usr/include/gdal
 
 RUN pip install GDAL==$(gdal-config --version | awk -F'[.]' '{print $1"."$2}') && \
+    pip install pyrasterframes==0.8.5 && \
     pip install jupyterhub==1.0.0
 
 RUN apt-get install unrar -y && \
