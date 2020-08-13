@@ -108,6 +108,7 @@ docker pull scioquiver/notebooks:cgspatial-notebook
 * [rasterio](https://pypi.org/project/rasterio/"rasterio")
 * [PCSE](https://pypi.org/project/PCSE/"PCSE")
 * [GDAL](https://pypi.org/project/GDAL/ "GDAL")
+* [pyrasterframes](https://pypi.org/project/pyrasterframes/0.8.5/)
 
 # References
 
