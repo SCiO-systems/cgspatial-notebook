@@ -4,9 +4,16 @@ FROM $BASE_CONTAINER
 USER root
 
 
-RUN pip install shapely  && \
-    pip install geopandas  && \
-    pip install rasterio  && \
+RUN pip install shapely && \
+    pip install geopandas && \
+    pip install rasterio && \
+    pip install ipyleaflet && \
+    pip install scikit-learn && \
+    pip install scikit-image && \
+    pip install xgboost && \
+    pip install torch torchvision && \
+    pip install Keras && \
+    pip install tensorflow && \
     pip install pcse
 
 RUN apt-get update && apt-get install software-properties-common -y
