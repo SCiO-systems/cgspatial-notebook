@@ -103,19 +103,19 @@ docker pull scioquiver/notebooks:cgspatial-notebook
 
 ## Python Libraries
 
-* [Shapely](https://pypi.org/project/Shapely/"Shapely")
-* [geopandas](https://pypi.org/project/geopandas/"geopandas")
-* [rasterio](https://pypi.org/project/rasterio/"rasterio")
-* [PCSE](https://pypi.org/project/PCSE/"PCSE")
-* [GDAL](https://pypi.org/project/GDAL/"GDAL")
+* [Shapely](https://pypi.org/project/Shapely/ "Shapely")
+* [geopandas](https://pypi.org/project/geopandas/ "geopandas")
+* [rasterio](https://pypi.org/project/rasterio/ "rasterio")
+* [PCSE](https://pypi.org/project/PCSE/ "PCSE")
+* [GDAL](https://pypi.org/project/GDAL/ "GDAL")
 * [pyrasterframes](https://pypi.org/project/pyrasterframes/0.8.5/)
-* [ipyleaflet](https://pypi.org/project/ipyleaflet/"ipyleaflet")
-* [scikit-learn](https://pypi.org/project/scikit-learn/"scikit-learn")
-* [scikit-image](https://pypi.org/project/scikit-image/"scikit-image")
-* [xgboost](https://pypi.org/project/xgboost/"xgboost")
-* [Keras](https://pypi.org/project/Keras/"Keras")
-* [tensorflow](https://pypi.org/project/tensorflow/"tensorflow")
-* [PyTorch](https://pytorch.org/"PyTorch")
+* [ipyleaflet](https://pypi.org/project/ipyleaflet/ "ipyleaflet")
+* [scikit-learn](https://pypi.org/project/scikit-learn/ "scikit-learn")
+* [scikit-image](https://pypi.org/project/scikit-image/ "scikit-image")
+* [xgboost](https://pypi.org/project/xgboost/ "xgboost")
+* [Keras](https://pypi.org/project/Keras/ "Keras")
+* [tensorflow](https://pypi.org/project/tensorflow/ "tensorflow")
+* [PyTorch](https://pytorch.org/ "PyTorch")
 
 # References
 
