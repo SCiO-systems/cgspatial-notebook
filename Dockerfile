@@ -33,8 +33,7 @@ RUN apt-get install unrar -y && \
         apt-get install proj-bin -y
 
 RUN conda install -c conda-forge r-velox && \
-    conda install -c conda-forge r-rjava && \
-    conda install -c conda-forge r-lwgeom
+    conda install -c conda-forge r-rjava
 
 RUN apt-get remove pkg-config -y
 
