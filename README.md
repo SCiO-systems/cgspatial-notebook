@@ -100,6 +100,8 @@ docker pull scioquiver/notebooks:cgspatial-notebook
 * [reshape](https://cran.r-project.org/package=reshape "reshape")
 * [genesysr](https://gitlab.croptrust.org/genesys-pgr/genesysr "genesysr")
 * [rgbif](https://github.com/ropensci/rgbifc "rgbif")
+* [r-lwgeom](https://anaconda.org/conda-forge/r-lwgeom "r-lwgeom")
+* [rhdx](https://github.com/dickoa/rhdx "rhdx")
 
 ## Python Libraries
 
