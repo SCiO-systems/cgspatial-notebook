@@ -1,7 +1,9 @@
-ARG BASE_CONTAINER=jupyter/datascience-notebook:lab-3.0.9
+ARG BASE_CONTAINER=scioquiver/notebooks:cgspatial-notebook
 FROM $BASE_CONTAINER
 
-USER root
+
+RUN conda uninstall r-base -y
+RUN conda install -c conda-forge r-base
 
 
 RUN pip install shapely && \
