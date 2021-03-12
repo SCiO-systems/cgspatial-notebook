@@ -92,8 +92,8 @@ docker pull scioquiver/notebooks:cgspatial-notebook
 * [fpc](https://cran.r-project.org/package=fpc "fpc")
 * [Rquefts](https://cran.r-project.org/package=Rquefts "Rquefts")
 * [reshape](https://cran.r-project.org/package=reshape "reshape")
-* [tmaptools](https://anaconda.org/conda-forge/r-tmaptools "tmaptools")
-* [tmap](https://anaconda.org/conda-forge/r-tmap "tmap")
+* [terra](https://cran.r-project.org/web/packages/terra/index.html "terra")
+* [luna](https://github.com/rspatial/luna "luna")
 * [genesysr](https://gitlab.croptrust.org/genesys-pgr/genesysr "genesysr")
 * [rgbif](https://github.com/ropensci/rgbifc "rgbif")
 
