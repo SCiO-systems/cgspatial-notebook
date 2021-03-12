@@ -4,7 +4,7 @@ FROM $BASE_CONTAINER
 
 RUN conda uninstall r-base -y
 RUN conda install -c conda-forge r-base
-
+RUN conda install -c r r-irkernel
 
 RUN pip install shapely && \
     pip install geopandas && \
