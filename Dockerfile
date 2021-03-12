@@ -1,4 +1,4 @@
-ARG BASE_CONTAINER=jupyter/datascience-notebook:notebook-6.0.3
+ARG BASE_CONTAINER=jupyter/datascience-notebook:lab-3.0.9
 FROM $BASE_CONTAINER
 
 USER root
@@ -46,6 +46,9 @@ RUN  conda install openjdk=8.0.192=h14c3975_1003 && \
      conda install --quiet --yes 'r-spdep' && \
      conda install --quiet --yes 'r-rcolorbrewer' && \
      conda install --quiet --yes 'r-ncdf4'
+
+RUN conda install --yes -c conda-forge r-tmaptools  && \
+    conda install --yes -c conda-forge r-tmap
 
 ADD libraries.R libraries.R
 RUN Rscript libraries.R
