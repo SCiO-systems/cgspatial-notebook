@@ -2,12 +2,8 @@
 [![CGIAR:CSI-CoP](https://img.shields.io/badge/CGIAR-CSI--CoP-brightgreen)](https://bigdata.cgiar.org/communities-of-practice/geospatial-data/)
 [![maintainer:SCiO](https://img.shields.io/badge/maintainer-SCiO-blue)](https://scio.systems)
 
-
-
 # cgspatial-notebook
 `cgspatial-notebook` is a community Jupyter Docker Stack image. The image includes major geospatial Python &amp; R libraries  on top of the datascience-notebook image. It also contains libraries that allow operations over climatic data.
-
-
 
 ## Try it on Binder
 
@@ -22,7 +18,6 @@ Docker Pull Command for Docker image.
 ```
 docker pull scioquiver/notebooks:cgspatial-notebook
 ```
-
 
 ## R Libraries
 * [DSSAT](https://cran.r-project.org/package=dismo "DSSAT")
@@ -97,6 +92,8 @@ docker pull scioquiver/notebooks:cgspatial-notebook
 * [fpc](https://cran.r-project.org/package=fpc "fpc")
 * [Rquefts](https://cran.r-project.org/package=Rquefts "Rquefts")
 * [reshape](https://cran.r-project.org/package=reshape "reshape")
+* [tmaptools](https://anaconda.org/conda-forge/r-tmaptools "tmaptools")
+* [tmap](https://anaconda.org/conda-forge/r-tmap "tmap")
 * [genesysr](https://gitlab.croptrust.org/genesys-pgr/genesysr "genesysr")
 * [rgbif](https://github.com/ropensci/rgbifc "rgbif")
 
