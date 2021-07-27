@@ -99,7 +99,8 @@ docker pull scioquiver/notebooks:cgspatial-notebook
 * [reshape](https://cran.r-project.org/package=reshape "reshape")
 * [genesysr](https://gitlab.croptrust.org/genesys-pgr/genesysr "genesysr")
 * [rgbif](https://github.com/ropensci/rgbifc "rgbif")
-
+* [agro](https://github.com/reagro/agro "agro")
+* [carobiner](https://github.com/reagro/carobiner "carobiner")
 ## Python Libraries
 
 * [Shapely](https://pypi.org/project/Shapely/ "Shapely")
